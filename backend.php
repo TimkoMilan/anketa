@@ -9,6 +9,8 @@
 <body>
     <?php
             $value = $_GET['val'];
+            $box = $_GET['box'];
+            if($box == on){
             echo "You vote for ".$value.".";
     $dotaz="update vote set ".$value. "= ".$value." + 1 where id = 1";
                 $conn = mysqli_connect("localhost:3306","root","","hlasovanie");
@@ -19,7 +21,10 @@
 			//echo "New record";
 		}else{
 			//echo "Error connection";
-		}
+        }
+    }else{
+        echo "Confirm button before vote";
+    }
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -53,10 +58,10 @@
 <?php
  
 $dataPoints = array(
-	array("x"=> 10, "y"=> $bmw),
-	array("x"=> 20, "y"=> $mercedes),
-	array("x"=> 30, "y"=> $audi),
-	array("x"=> 40, "y"=> $bentley)
+	array("BMW"=> 10, "y"=> $bmw),
+	array("Mercedes"=> 20, "y"=> $mercedes),
+	array("Audi"=> 30, "y"=> $audi),
+	array("Bentley"=> 40, "y"=> $bentley)
 );
 	
 ?>
